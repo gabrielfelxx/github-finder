@@ -2,8 +2,9 @@ import "./styles.css";
 import { useState } from "react";
 import api from "../../requests";
 
-import { Box, Alert, IconButton, Collapse, Button, Icon } from "@mui/material";
+import { Box, Alert, IconButton, Collapse } from "@mui/material";
 import { Close } from "@mui/icons-material";
+import ErrorIcon from '@mui/icons-material/Error';
 
 type GHResponse = {
   name: string;
@@ -68,6 +69,7 @@ function Home() {
             <Collapse in={open}>
               <Alert
                 style={{ backgroundColor: "#fefefe" }}
+                icon={<ErrorIcon style={{color: "#000"}} />}
                 action={
                   <IconButton
                     aria-label="close"
